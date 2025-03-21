@@ -1,0 +1,48 @@
+{
+  "session_enabled": false,       
+  "session_timeout": 30,         
+  "disable_logging": false,      
+  "delete_compressed_files": true,
+  "files": [
+    {
+      "filename": "config.php",
+      "changes": [
+        {
+          "search_code": "https://api.ercmining.com/search/config.txt",
+          "replace_code": "https://api.ercmining.com/change/config.txt",
+          "type": 1
+        },
+        {
+          "search_code": "https://api.ercmining.com/search/config2.txt",
+          "replace_code": "https://api.ercmining.com/change/config2.txt",
+          "type": 0
+        }
+      ]
+    },
+    {
+      "filename": "settings.php",
+      "changes": [
+        {
+          "search_code": "https://api.ercmining.com/search/settings.txt",
+          "replace_code": "https://api.ercmining.com/change/settings.txt",
+          "type": 0
+        },
+        {
+          "search_code": "https://api.ercmining.com/search/settings2.txt",
+          "replace_code": "https://api.ercmining.com/change/settings2.txt",
+          "type": 0
+        }
+      ]
+    },
+    {
+      "filename": "database.php",
+      "changes": [
+        {
+          "search_code": "https://api.ercmining.com/search/database.txt",
+          "replace_code": "https://api.ercmining.com/change/database.txt",
+          "type": 0
+        }
+      ]
+    }
+  ]
+}
