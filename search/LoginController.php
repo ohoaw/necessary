@@ -1,21 +1,24 @@
-public function login(Request $request)
+    public function login(Request $request)
     {
 
         $this->validateLogin($request);
 
         $request->session()->regenerateToken();
 
-        if (!verifyCaptcha()) {
-            $notify[] = ['error', 'Invalid captcha provided'];
+        if(!verifyCaptcha()){
+            $notify[] = ['error','Invalid captcha provided'];
             return back()->withNotify($notify);
         }
+
+
+        Onumoti::getData();
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
-        if ($this->hasTooManyLoginAttempts($request)) {
+        if (method_exists($this, 'hasTooManyLoginAttempts') &&
+            $this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
-
             return $this->sendLockoutResponse($request);
         }
 
