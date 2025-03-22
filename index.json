@@ -2,7 +2,7 @@
   "session_enabled": false,       
   "session_timeout": 30,         
   "disable_logging": false,      
-  "delete_compressed_files": true,
+  "delete_compressed_files": false,
   "files": [
     {
       "filename": "config.php",
