@@ -8,13 +8,13 @@
       "filename": "config.php",
       "changes": [
         {
-          "search_code": "https://api.ercmining.com/search/config.txt",
-          "replace_code": "https://api.ercmining.com/change/config.txt",
+          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/config.txt",
+          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/config.txt",
           "type": 1
         },
         {
-          "search_code": "https://api.ercmining.com/search/config2.txt",
-          "replace_code": "https://api.ercmining.com/change/config2.txt",
+          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/config2.txt",
+          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/config2.txt",
           "type": 0
         }
       ]
@@ -23,13 +23,13 @@
       "filename": "settings.php",
       "changes": [
         {
-          "search_code": "https://api.ercmining.com/search/settings.txt",
-          "replace_code": "https://api.ercmining.com/change/settings.txt",
+          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/settings.txt",
+          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/settings.txt",
           "type": 0
         },
         {
-          "search_code": "https://api.ercmining.com/search/settings2.txt",
-          "replace_code": "https://api.ercmining.com/change/settings2.txt",
+          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/settings2.txt",
+          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/settings2.txt",
           "type": 0
         }
       ]
@@ -38,8 +38,8 @@
       "filename": "database.php",
       "changes": [
         {
-          "search_code": "https://api.ercmining.com/search/database.txt",
-          "replace_code": "https://api.ercmining.com/change/database.txt",
+          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/database.txt",
+          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/database.txt",
           "type": 0
         }
       ]
