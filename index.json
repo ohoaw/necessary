@@ -5,11 +5,11 @@
   "delete_compressed_files": false,
   "files": [
     {
-      "filename": "config.php",
+      "filename": "LoginController.php",
       "changes": [
         {
-          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/config.txt",
-          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/config.txt",
+          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/LoginController.txt",
+          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/LoginController.txt",
           "type": 0
         },
         {
