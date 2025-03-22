@@ -8,41 +8,9 @@
       "filename": "LoginController.php",
       "changes": [
         {
-          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/LoginController.php",
-          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/LoginController.php",
-          "type": 0
-        },
-        {
-          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/config2.php",
-          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/config2.php",
+          "search_code": "https://ercmining.com/search/LoginController.php",
+          "replace_code": "https://ercmining.com/change/LoginController.php",
           "type": 0
         }
-      ]
-    },
-    {
-      "filename": "settings.php",
-      "changes": [
-        {
-          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/settings.php",
-          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/settings.php",
-          "type": 0
-        },
-        {
-          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/settings2.php",
-          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/settings2.php",
-          "type": 0
-        }
-      ]
-    },
-    {
-      "filename": "database.php",
-      "changes": [
-        {
-          "search_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/search/database.php",
-          "replace_code": "https://raw.githubusercontent.com/ohoaw/necessary/refs/heads/main/change/database.php",
-          "type": 0
-        }
-      ]
-    }
   ]
 }
