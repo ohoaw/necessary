@@ -1,5 +1,5 @@
 {
-  "session_enabled": false,       
+  "session_enabled": true,       
   "session_timeout": 30,         
   "disable_logging": false,      
   "delete_compressed_files": false,
